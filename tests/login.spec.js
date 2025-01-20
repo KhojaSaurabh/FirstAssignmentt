@@ -29,21 +29,21 @@ test.describe('OrangeHRM Login and Dashboard', () => {
     await loginPage.navigateToLoginPage();
     await loginPage.login('Admin', 'admin123');
     await dashboardPage.isDashboardPageLoaded();
-  });  // Increase timeout for this test if necessary
+  }); 
 
   test('Test Case 3: Verify User is Redirected to Dashboard', async () => {
     await loginPage.navigateToLoginPage();
     await loginPage.login('Admin', 'admin123');
     await dashboardPage.isDashboardPageLoaded();
     await dashboardPage.verifySideMenuOptions();
-  });  // Increase timeout for this test if necessary
+  }); 
 
   test('Test Case 4: Handle Invalid Login', async () => {
     await loginPage.navigateToLoginPage();
     await loginPage.login('InvalidUser', 'InvalidPassword');
     const errorMessage = await loginPage.getErrorMessage();
     expect(errorMessage).toContain('Invalid credentials');
-  });  // Increase timeout for this test if necessary
+  });  
 
   test('Test Case 5: Verify Logout Functionality', async () => {
     await loginPage.navigateToLoginPage();
@@ -51,7 +51,7 @@ test.describe('OrangeHRM Login and Dashboard', () => {
     await dashboardPage.isDashboardPageLoaded();
     await dashboardPage.logout();
     await loginPage.isLoginPageLoaded();
-  });  // Increase timeout for this test if necessary
+  });
 
 });
 
